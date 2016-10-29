@@ -10,6 +10,8 @@ const PORT =process.argv[2] || process.env.PORT || 3000;
 
 const homeRoute = require('./routes/index.js');
 
+const bookRoute = require('./routes/book');
+
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
@@ -24,3 +26,5 @@ app.listen(PORT, () => {
 
 
 app.use('/', homeRoute);
+app.use('/', bookRoute)
+
