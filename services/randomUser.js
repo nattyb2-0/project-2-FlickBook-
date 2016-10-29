@@ -11,8 +11,10 @@ function searchInmates(req, res, next) {
       return apiResponse.json();
     })
     .then((json) => {
-      console.log(json.results);
+     //console.log(json.results);
       res.results = json.results;
+      console.log('fuckkkkkkkkkkkkkkkk offffff')
+      console.log(res.results[0].gender)
       next();
     })
     .catch((err) => {

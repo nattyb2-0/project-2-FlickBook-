@@ -26,5 +26,5 @@ app.listen(PORT, () => {
 
 
 app.use('/', homeRoute);
-app.use('/', bookRoute)
+app.use('/book', bookRoute)
 

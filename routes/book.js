@@ -2,11 +2,18 @@
 const bookRoute = require('express').Router();
 const { searchInmates} = require('../services/randomUser');
 
-bookRoute.get('/', ,(req,res) => {
+bookRoute.get('/', (req,res) => {
   res.render('book/index', {
     results: res.results || [],
   });
 });
 
+bookRoute.post('/search', searchInmates, (req,res) => {
+  res.render('book/index', {
+    results: res.results || []
+
+  });
+  console.log(results);
+});
 
 module.exports =bookRoute
