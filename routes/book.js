@@ -13,7 +13,7 @@ bookRoute.post('/search', searchInmates, (req,res) => {
     results: res.results || []
 
   });
-  console.log(results);
+
 });
 
 module.exports =bookRoute

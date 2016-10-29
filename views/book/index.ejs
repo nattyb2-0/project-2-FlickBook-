@@ -11,5 +11,23 @@
   <form action="/book/search" method="POST">
   <input type=text name="random user">
   <input type="submit" name="submit" value="search inmates">
+
+  <main>
+  <section>
+    <h2>Search Results:</h2>
+    <% results.forEach((inmate) => { %>
+      <div class="search-results">
+        <img src="<%= inmate.picture.medium %>" alt="">
+        <p><%= inmate.registered %></p>
+        <form action="/book/collection" method="POST">
+          <input type="hidden" name="collection[picture]" value="<%= inmate.picture.medium %>">
+          <input type="hidden" name="collection[stateNumber]" value="<%= inmate.register%>">
+          <input type="submit" value="create">
+        </form>
+        </div>
+    <% }) %>
+
+  </section>
+  </main>
 </body>
 </html>

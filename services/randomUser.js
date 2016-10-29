@@ -13,8 +13,8 @@ function searchInmates(req, res, next) {
     .then((json) => {
      //console.log(json.results);
       res.results = json.results;
-      console.log('fuckkkkkkkkkkkkkkkk offffff')
-      console.log(res.results[0].gender)
+      //console.log('fuckkkkkkkkkkkkkkkk offffff')
+      //console.log(res.results.gender)
       next();
     })
     .catch((err) => {
