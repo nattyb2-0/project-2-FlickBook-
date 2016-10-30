@@ -1,6 +1,7 @@
 
 const bookRoute = require('express').Router();
 const { searchInmates} = require('../services/randomUser');
+const favorites = require('../models/favorites');
 
 bookRoute.get('/', (req,res) => {
   res.render('book/index', {
@@ -8,12 +9,24 @@ bookRoute.get('/', (req,res) => {
   });
 });
 
-bookRoute.post('/search', searchInmates, (req,res) => {
+bookRoute.post('/search', searchInmates,  (req,res) => {
   res.render('book/index', {
-    results: res.results || []
+
+    results: res.results || [],
+    favorites: res.favorites || [],
 
   });
 
 });
+bookRoute.post('/favorites', favorites.saveFavorite, (req, res) => {
+  res.redirect('/book');
+  console.log(favorites);
 
-module.exports =bookRoute
+});
+
+
+
+module.exports =bookRoute;
+
+//favorites.
+//getFavorites
