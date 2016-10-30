@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" href="">
+
+   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <h1>book Page</h1>
@@ -12,31 +13,52 @@
   <input type=text name="random user">
   <input type="submit" name="submit" value="search inmates">
 
-  <main>
-  <section>
+    <div class='results'>
     <h2>Search Results:</h2>
           <% results.forEach((inmate) => { %>
-      <div class="search-results">
+      <div >
         <img src="<%= inmate.picture.medium %>" alt="">
         <p><%= inmate.registered %></p>
         <form action="/book/favorites" method="POST">
           <input type="hidden" name="favorite[picture]" value="<%= inmate.picture.medium %>">
-          <input type="hidden" name="favorite[stateNumber]" value="<%= inmate.register%>">
+          <input type="hidden" name="favorite[stateNumber]" value="<%= inmate.registered%>">
           <input type="submit" value="create">
         </form>
         </div>
     <% }) %>
+    </div>
           <form action="/book/collection" method="POSt">
   <input type="file" name="pic" accept="image/*">
   <input type="submit">
 </form>
-  </section>
+
   <div class="container">
         <h3>Favorites</h3>
         <ul class="favorites">
+            <% for(let i = 0; i < favorites.length; i++){ %>
+            <div class= "poster">
+              <div class="poster-photo">
+              <img src="<%= favorites[i].picture %>" alt="" />
+              <h4><%= favorites[i].stateNumber %></h4>
+              </div>
+              <div class="st-numb">
 
+              </div>
+              <div class="poster-cont">
+              </div>
+              <form class="" action="/book<%= favorites[i]._id %>?_method=DELETE" method="post">
+                <input type="submit" name="name" value="Delete">
+              </form>
+              <form action="/book/favorites" method="POST">
+              <input class="post" type="textarea" name="post" ></textarea>"
+          <input type="hidden" name="favorite[post]" value=
+          <input type="submit" value="create post">
+          </form>
+            </li>
+          <% }; %>
         </ul>
       </div>
-  </main>
+
+  </body>
 </body>
 </html>

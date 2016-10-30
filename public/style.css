@@ -1,0 +1,152 @@
+*{
+  margin:0;
+  padding:0;
+
+}
+
+body{
+  width: 100%;
+   font-size: 14px;
+   height:100%;
+}
+header{
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    width: 100%;
+    text-align: left;
+    background-color: rgba(21,21,23,.95);
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+  }
+
+.login{
+  text-decoration: none;
+  position: absolute;
+  top: 2vh;
+  left:90vw;
+  padding: 5px
+  color: white;
+}
+
+.signup{
+  position: absolute;
+  top: 1.1vh;
+  left: 70vw;
+  border:1px solid black;
+  background-color: rgb(18,188,251);
+  font-size:1.3em;
+  padding: .5em;
+  border-radius: 10px;
+}
+
+.logo{
+  color:white;
+  font-size: 2.4em;
+  margin-left: 8vw;
+}
+
+.icon {
+  position: absolute;
+  top: .5vh;
+  left: 40vw;
+ background-color: rgb(18,188,251);
+ border-radius: 10px;
+ color: white;
+}
+
+.icon img {
+  height:50px;
+  width: 50px;
+}
+.icon div {
+  display:inline-block;
+}
+.icon-txt {
+  position:relative;
+  top:-1.4vw;
+  left:-.7vw;
+
+}
+a{
+  color:white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+main{
+  width:100%;
+  height:auto;
+}
+.blue {
+  width:100%;
+  height:auto;
+  background-color: blue;
+  padding: 100px 0px;
+}
+.green {
+  width:100%;
+  height:auto;
+  background-color: green;
+}
+
+
+
+.overview{
+  width:70%;
+  height:300px;
+  background-color: red;
+  margin: auto;
+}
+
+.overview img{
+ border-radius: 50%;
+ width:15%;
+ height:40%;
+ display: block;
+ margin: auto;
+ margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.results{
+  display:inline-flex;
+  width: 300px;
+  height: auto;
+  flex-direction: wrap;
+  justify-content: center;
+}
+
+
+
+.container {
+  display:inline-flex;
+  width: 300px;
+  height: auto;
+  flex-direction: wrap;
+  justify-content: center;
+}
+
+.poster{
+  width: 30vw;
+  height:30vw;
+  border: 2px solid black;
+  margin: 5px;
+}
+.poster-photo {
+  margin: 2px;
+  border: 2px solid red;
+  width: 20vw;
+}

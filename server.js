@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
 const book = require('./models/favorites');
+const methodOverride = require('method-override');
 
 const app = express();
 const PORT =process.argv[2] || process.env.PORT || 3000;
@@ -41,3 +42,7 @@ app.use('/book', bookRoute)
 
           //favorites[i].picture.medium
           //<h4><%= favorites[i].register %></h4>
+
+          /*<form class="" action="favorites/<%= favorites[i]._id %>?_method=DELETE" method="post">
+                <input type="submit" name="name" value="Delete">
+              </form>*/
