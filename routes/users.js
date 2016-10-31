@@ -12,6 +12,7 @@ usersRouter.post('/', createUser, (req, res) => {
   res.redirect('/');
 });
 
+
 /**
  * Takes the user to its profile by handling any GET request to `/users/profile`
  * It redirects to /login when attempted to be reached by a non logged in user

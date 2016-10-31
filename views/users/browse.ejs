@@ -6,7 +6,7 @@
   <title></title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="browse-body">
+<body>
     <header>
       <div class="logo">
         <h1>FLICK BOOK</h1>
@@ -19,16 +19,14 @@
         <a href="/signup" title="">Sign Up</a>
       </div>
     </header>
-    <div class="browse-title">
-        <h1>Flickbooks created by members</h1>
-    </div>
-    <div class="browse">
-      <% for(let i = 0; i < browse.length; i++){ %>
-        <div >
-          <img src="<%= browse[i].picture %>" alt="" />
-          <h4><%= browse[i].stateNumber %></h4>
-        </div>
-      <% }; %>
-    </div>
+
+  <% for(let i = 0; i < browse.length; i++){ %>
+              <div>
+
+                <img src="<%= browse[i].picture %>" alt="" />
+                <h4><%= browse[i].stateNumber %></h4>
+
+            </div>
+          <% }; %>
 </body>
 </html>

@@ -1,5 +1,5 @@
 const express = require('express');
-
+const show = require('../models/explore');
 const homeRoute = express.Router();
 
 // when the homepage is called, render the index page on screen
@@ -16,9 +16,11 @@ homeRoute.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-// when a guest just wants to browse the site, render the browse view
-homeRoute.get('/browse', (req, res) => {
-  res.render('browse');
-});
+homeRoute.get('/browse', show.showAll, (req, res) =>{
+  res.render('browse', {
+    browse: res.all || [],
+  })
+})
+
 
 module.exports = homeRoute;
