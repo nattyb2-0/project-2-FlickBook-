@@ -1,12 +1,10 @@
 const express = require('express');
-const { getBackground } = require('../services/background');
+
 const homeRoute = express.Router();
 
 // when the homepage is called, render the index page on screen
-homeRoute.get('/',getBackground, (req, res) => {
-  res.render('index', {
-    image: res.image,
-  });
+homeRoute.get('/', (req, res) => {
+  res.render('index');
 });
 // when the login clicked, render the login page to user
 homeRoute.get('/login', (req, res) => {
@@ -20,13 +18,7 @@ homeRoute.get('/signup', (req, res) => {
 
 // when a guest just wants to browse the site, render the browse view
 homeRoute.get('/browse', (req, res) => {
-  res.render('browse')
-})
-
-
-
-
-
+  res.render('browse');
+});
 
 module.exports = homeRoute;
-

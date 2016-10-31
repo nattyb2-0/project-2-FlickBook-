@@ -46,7 +46,7 @@
               </div>
               <div class="poster-cont">
               </div>
-              <form class="" action="/book<%= favorites[i]._id %>?_method=DELETE" method="post">
+              <form class="" action="/book/favorites<%= favorites._id %>?_method=DELETE" method="post">
                 <input type="submit" name="name" value="Delete">
               </form>
               <form action="/book/favorites" method="POST">

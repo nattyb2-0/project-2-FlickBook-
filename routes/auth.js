@@ -1,5 +1,5 @@
-const express    = require('express');
-const { logIn }  = require('../lib/auth');
+const express = require('express');
+const { logIn } = require('../lib/auth');
 
 
 // Router

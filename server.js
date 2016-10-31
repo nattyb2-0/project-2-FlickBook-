@@ -5,19 +5,19 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const book = require('./models/favorites');
 const methodOverride = require('method-override');
-const session         = require('express-session');
-const cookieParser    = require('cookie-parser');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 
 const app = express();
-const SECRET          = 'tacos3000';
+const SECRET = 'tacos3000';
 
-const PORT =process.argv[2] || process.env.PORT || 3000;
+const PORT = process.argv[2] || process.env.PORT || 3000;
 
 const homeRoute = require('./routes/index.js');
-const userRoute = require('./routes/users')
+const userRoute = require('./routes/users');
 const bookRoute = require('./routes/book');
-const authRoute = require('./routes/auth')
+const authRoute = require('./routes/auth');
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -33,31 +33,14 @@ app.use(cookieParser());
 
 app.listen(PORT, () => {
   console.log('server is running on port ', PORT);
-})
+});
 app.use(session({
   resave: false,
   saveUninitialized: false,
-  secret: SECRET
+  secret: SECRET,
 }));
 
 app.use('/auth', authRoute);
-app.use('/users', userRoute)
+app.use('/users', userRoute);
 app.use('/', homeRoute);
-app.use('/book', bookRoute)
-/*
-% for(let i = 0; i < favorites.length; i++){ %>
-            <li class="item">
-              <img src="<%= favorites[i].picture.medium %>" alt="" />
-              <h4><%= favorites[i].register %></h4>
-              <form class="" action="favorites/<%= favorites[i]._id %>?_method=DELETE" method="post">
-                <input type="submit" name="name" value="Delete">
-              </form>
-            </li>
-          <% }; %>*/
-
-          //favorites[i].picture.medium
-          //<h4><%= favorites[i].register %></h4>
-
-          /*<form class="" action="favorites/<%= favorites[i]._id %>?_method=DELETE" method="post">
-                <input type="submit" name="name" value="Delete">
-              </form>*/
+app.use('/book', bookRoute);
