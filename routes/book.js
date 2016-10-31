@@ -3,6 +3,7 @@ const bookRoute = require('express').Router();
 const { searchInmates} = require('../services/randomUser');
 const favorites = require('../models/favorites');
 
+
 bookRoute.get('/', favorites.getFavorites, (req,res) => {
   res.render('book/index', {
     results: res.results || [],
