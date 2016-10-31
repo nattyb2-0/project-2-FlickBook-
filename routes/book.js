@@ -1,30 +1,43 @@
 
 const bookRoute = require('express').Router();
-const { searchInmates} = require('../services/randomUser');
+const { searchInmates } = require('../services/randomUser');
 const favorites = require('../models/favorites');
 const getFavorites = require('../models/favorites');
 const deleteFavorite = require('../models/favorites');
 const { authenticate } = require('../lib/auth');
+const posts = require('../models/posts');
+const getPost = require('../models/posts');
+const deletePost = require('../models/posts');
 
-bookRoute.get('/', favorites.getFavorites, authenticate, (req, res) => {
+
+bookRoute.get('/',searchInmates, authenticate ,favorites.getFavorites, authenticate, posts.getPost, (req, res) => {
+  res.render('book/index', {
+    results: res.results || [],
+    favorites: res.favorites || [],
+    posts: res.post,
+    user: res.user ,
+  });
+});
+
+bookRoute.post('/', searchInmates, favorites.getFavorites, authenticate, posts.getPost, (req, res) => {
   res.render('book/index', {
     results: res.results || [],
     favorites: res.favorites || [],
   });
+
 });
 
-bookRoute.post('/search', searchInmates, favorites.getFavorites, authenticate, (req, res) => {
-  res.render('book/index', {
-    results: res.results || [],
-    favorites: res.favorites || [],
-  });
-});
-bookRoute.post('/favorites', favorites.saveFavorite, (req, res) => {
+bookRoute.post('/favorites', searchInmates,favorites.saveFavorite, posts.savePost, (req, res) => {
   res.redirect('/book');
-  console.log(favorites);
+  console.log(res.saved);
 });
 
-bookRoute.delete('/favorites/:id', favorites.deleteFavorite, (req, res) => {
+bookRoute.post('/post', posts.savePost, (req, res) => {
+  res.redirect('/book');
+  console.log(res.saved);
+});
+
+bookRoute.delete('book/favorites/:id', favorites.deleteFavorite, posts.deletePost, (req, res) => {
   res.redirect('/book');
 });
 

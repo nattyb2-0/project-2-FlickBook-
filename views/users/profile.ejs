@@ -7,7 +7,19 @@
   <body>
     <!-- Example -->
     <h1>Welcome! <%= user.username %></h1>
-    <a href="/book">Search Inmates</a>
+      <div >
+      <a href="/book">Search Inmates</a>
+          <div><h3>Search Inmates</h3></div>
+          <form action="/users/search" method="POST">
+            <input type=text name="random user">
+            <input type="submit" name="submit" value="search inmates">
+          </form>
+
+
+
+      </div>
+
+
     <form action="/auth?_method=DELETE" method="post">
       <input type="submit" value="Logout">
     </form>
