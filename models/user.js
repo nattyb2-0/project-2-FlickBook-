@@ -10,7 +10,7 @@ const SALTROUNDS = 10;
 function createUser(req, res, next) {
   const userObject = {
     firstname:req.body.user.firstname,
-    lastname: req.body.eser.lastname,
+    lastname: req.body.user.lastname,
     dob: req.body.user.dob,
     gender:req.body.user.gender,
     password: req.body.user.password,
