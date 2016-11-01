@@ -279,7 +279,7 @@ footer{
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-top: 30vh;
   margin: auto;
 
@@ -287,9 +287,9 @@ footer{
 }
 
 .browse-body {
-  background-image: url("http://4vector.com/i/free-vector-5-realistic-scenery-vector-nonoriginal-works_093622_Landscapes%20bf2.jpg");
+  /*background-image: url("http://4vector.com/i/free-vector-5-realistic-scenery-vector-nonoriginal-works_093622_Landscapes%20bf2.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
 
 }
 
@@ -298,10 +298,32 @@ footer{
   width: 70vw;
   letter-spacing: 2px;
   font-size: 24px;
-  color:black;
+  color:white;
     text-shadow: 0 0 10px rgba(0,0,0,.4);
     position: relative;
     top: 30vh;
+}
+
+
+.fav-pic img {
+  border-radius: 50%;
+}
+
+.number{
+  background-color: rgba(0,0,0,.3)
+}
+
+.book {
+  width: 572px;
+  height: 100px;
+
+}
+
+
+.individual{
+  margin-top: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 

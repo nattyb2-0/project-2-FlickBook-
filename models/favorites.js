@@ -10,7 +10,9 @@ const dbConnection = process.env.MONGODB_URI || 'mongodb://localhost:27017/flick
 function saveFavorite(req, res, next) {
 
   // creating an empty object for the insertObj
-  const insertObj = {};
+  const insertObj = {
+    favorite: {},
+  };
 
   // copying all of req.body into insertObj
   for(key in req.body) {

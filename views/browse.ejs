@@ -25,10 +25,18 @@
     </div>
     <div class="browse">
       <% for(let i = 0; i < browse.length; i++){ %>
-        <div >
-          <img src="<%= browse[i].picture %>" alt="" />
-          <h4><%= browse[i].stateNumber %></h4>
-        </div>
+        <div class="individual">
+                <div class="fav-pic">
+                <img src="<%= browse[i].picture %>" alt="" />
+                </div>
+                <div class="number">
+                <h4><%= browse[i].stateNumber %></h4>
+                </div>
+                <div class="book">
+                </div>
+
+            </div>
+
       <% }; %>
     </div>
 </body>

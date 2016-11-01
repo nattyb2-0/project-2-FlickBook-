@@ -19,14 +19,20 @@
         <a href="/signup" title="">Sign Up</a>
       </div>
     </header>
-
+  <div>
   <% for(let i = 0; i < browse.length; i++){ %>
-              <div>
-
+              <div class="individual">
+                <div class="fav-pic">
                 <img src="<%= browse[i].picture %>" alt="" />
+                </div>
+                <div class="number">
                 <h4><%= browse[i].stateNumber %></h4>
+                </div>
+                <div class="book">
+                </div>
 
             </div>
           <% }; %>
+          </div>
 </body>
 </html>
