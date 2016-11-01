@@ -32,3 +32,4 @@ usersRouter.post('/search', searchInmates, (req,res) => {
 });
 
 module.exports = usersRouter;
+

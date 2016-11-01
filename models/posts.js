@@ -7,8 +7,8 @@ const dbConnection = 'mongodb://localhost:27017/flickbook';
 function savePost(req, res, next) {
 
   // creating an empty object for the insertObj
-  const insertObj = {
-    post: {},
+  function createPost (req,res,next) {
+    post: req.body.post.post
    // body:
     //userID:
     /*comments: [
@@ -17,30 +17,17 @@ function savePost(req, res, next) {
 
   };
 
-  // copying all of req.body into insertObj
-  for(key in req.body) {
-    insertObj[key] = req.body[key];
-  }
 
-  // Adding userId to insertObj
-  insertObj.post.userId = req.session.userId;
-
-  MongoClient.connect(dbConnection, (err, db) => {
-    if (err) return next(err);
-
+getDB().then((db) => {
     db.collection('post')
-    .insert(/*req.body.favorite,*/insertObj.post, (insertErr, result) => {
-      if (insertErr) return next(insertErr);
+      .insert(userObject, (insertErr, result) => {
+        if (insertErr) return next(insertErr);
 
-      res.saved = result;
-      //console.log(res.favorites)
-
-      db.close();
-      return next();
-    });
-    return false;
+        res.post = result;
+        db.close();
+        return next();
+      });
   });
-  return false;
 }
 
 

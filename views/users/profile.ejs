@@ -3,25 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="/book.css">
   </head>
-  <body>
-    <!-- Example -->
-    <h1>Welcome! <%= user.username %></h1>
-      <div >
-      <a href="/book">Search Inmates</a>
-          <div><h3>Search Inmates</h3></div>
-          <form action="/users/search" method="POST">
-            <input type=text name="random user">
-            <input type="submit" name="submit" value="search inmates">
-          </form>
+  <body class="home-body">
+    <div class=" user-container">
+      <div class="sub-head">
 
-
-
+        <div>
+            <h1>Welcome To FLICKBOOK:<%= user.username %></h1>
+        </div>
+        <div>
+            <a href="/">Log Out </a>
+        </div>
       </div>
-
-
-    <form action="/auth?_method=DELETE" method="post">
-      <input type="submit" value="Logout">
-    </form>
-  </body>
-</html>
+      <main class="prof-main">
+          <section>
+            <a href="/book"><div class="button">
+              <h1>MY BOOKS</h1>
+            </div></a>
+          </section>
+        </main>
+    </body>
+  </html>

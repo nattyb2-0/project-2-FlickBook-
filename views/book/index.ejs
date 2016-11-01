@@ -8,12 +8,13 @@
    <link rel="stylesheet" href="/book.css">
 </head>
 <body>
-  <header>
+  <header class="header-book">
     <h1>Welcome! <%= user.username %></h1>
+    <form action="/book" method="POST">
+      <input type=text name="random user">
+      <input type="submit" name="submit" value="search inmates">
+    </form>
   </header>
-  <form action="/book" method="POST">
-  <input type=text name="random user">
-  <input type="submit" name="submit" value="search inmates">
 </form>
     <div class=container>
         <div class='results'>
@@ -25,7 +26,7 @@
 
             <p><%= inmate.registered %></p>
 
-          <form action="/book/favorites" method="POST">
+          <form action="/book/favorites/" method="POST">
             <input type="hidden" name="favorite[picture]" value="<%= inmate.picture.medium %>">
             <input type="hidden" name="favorite[stateNumber]" value="<%= inmate.registered%>">
             <input type="submit" value="create">
@@ -47,15 +48,22 @@
               <form class="" action="/book/favorites/<%= favorites._id %>?_method=DELETE" method="post">
                 <input type="submit" name="name" value="Delete">
               </form>
-              <form action="/book/favorites" method="POST">
-                <input class="post" type="textarea" name="post" ></textarea>"
-                <input type="hidden" name="favorite[post]" value="">
-                <input type="submit" value="create post">
-              </form>
+
             </div>
           <% }; %>
       </div>
       </div>
+      <footer class="home-footer">
+        <div>
+
+          <ul>
+            <a href="http://www.facebook.com/codingwithanattitude">Facebook</a>
+            <a href="http://www.instagram.com/codingwithanattitude">Instagram</a>
+            <a href="http://www.linkedin.com/nattydavis">linkedin</a>
+          </ul>
+        </div>
+       </footer>
+
       </body>
       </html>
 

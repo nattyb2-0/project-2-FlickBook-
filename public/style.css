@@ -261,8 +261,12 @@ footer{
   height: 80px;
   background-color: rgba(0,0,0,.8);
   position: relative;
+}
 
-
+.home-footer a{
+  margin-left: 150px;
+  position: relative;
+  top: 20px;
 }
 
 .browse{
@@ -294,7 +298,6 @@ footer{
     position: relative;
     top: 30vh;
 }
-
 
 
 

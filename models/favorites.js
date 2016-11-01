@@ -5,7 +5,7 @@
 const { MongoClient } = require('mongodb');
 const { ObjectID } = require('mongodb');
 
-const dbConnection = 'mongodb://localhost:27017/flickbook';
+const dbConnection = process.env.MONGODB_URI || 'mongodb://localhost:27017/flickbook';
 
 function saveFavorite(req, res, next) {
 
