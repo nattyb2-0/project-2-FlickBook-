@@ -103,6 +103,31 @@ a{
   background-color: rgba(0,0,0,.8);
   position: relative;
 }
+
+.fav-pic img {
+  border-radius: 50%;
+}
+
+.number{
+  background-color: rgba(0,0,0,.3)
+}
+
+.book {
+  width: 572px;
+  height: 100px;
+
 }
 
 
+.individual{
+  margin-top: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+button{
+  width: 70px;
+  height: 30px;
+  margin:5px;
+  border-radius: 5px
+}

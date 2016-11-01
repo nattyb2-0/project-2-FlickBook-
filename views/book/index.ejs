@@ -31,7 +31,7 @@
           <form action="/book/favorites/" method="POST">
             <input type="hidden" name="favorite[picture]" value="<%= inmate.picture.medium %>">
             <input type="hidden" name="favorite[stateNumber]" value="<%= inmate.registered%>">
-            <input type="submit" value="create">
+            <input type="submit" value="create flick book for me">
           </form>
         </div>
          <% }) %>
@@ -39,18 +39,25 @@
 
         <div class="fav">
 
-            <h2>FAVORITES:</h2>
+            <h2>FLICK BOOKS:</h2>
 
             <% for(let i = 0; i < favorites.length; i++){ %>
-              <div>
-
+              <div class="individual">
+                <div class="fav-pic">
                 <img src="<%= favorites[i].picture %>" alt="" />
+                </div>
+                <div class="number">
                 <h4><%= favorites[i].stateNumber %></h4>
-
+                </div>
+                <div class="book">
+                </div>
               <form class="" action="/book/favorites"<%= favorites._id %>?_method=DELETE" method="post">
                 <input type="submit" name="name" value="Delete">
               </form>
-
+              <button>post</button>
+              <button>like</button>
+              <button>comment</button>
+              <button>share</button>
             </div>
           <% }; %>
       </div>
