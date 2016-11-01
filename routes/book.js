@@ -30,7 +30,7 @@ bookRoute.post('/favorites', searchInmates,favorites.saveFavorite, (req, res) =>
 
 
 
-bookRoute.delete('book/favorites/:id', favorites.deleteFavorite, (req, res) => {
+bookRoute.delete('book/index/:id', favorites.deleteFavorite, (req, res) => {
   res.redirect('/book');
 });
 
