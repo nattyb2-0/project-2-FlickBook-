@@ -13,7 +13,9 @@
     <form action="/book" method="POST">
       <input type=text name="random user">
       <input type="submit" name="submit" value="search inmates">
+
     </form>
+    <a href="/">Log Out</a>
   </header>
 </form>
     <div class=container>
@@ -45,7 +47,7 @@
                 <img src="<%= favorites[i].picture %>" alt="" />
                 <h4><%= favorites[i].stateNumber %></h4>
 
-              <form class="" action="/book/favorites/<%= favorites._id %>?_method=DELETE" method="post">
+              <form class="" action="/book/favorites"<%= favorites._id %>?_method=DELETE" method="post">
                 <input type="submit" name="name" value="Delete">
               </form>
 
